@@ -98,6 +98,7 @@
     - upgrade_to_1080 (boolean), set video resolution to high definition
     - offset (int),
     - chunkSize (int),
+    - privacy (string), privacy video setting 'default:anybody'
     - retryHandler (RetryHandler), hanlder class
     - onComplete (function), handler for onComplete event
     - onProgress (function), handler for onProgress event
@@ -116,6 +117,7 @@
         upgrade_to_1080: false,
         offset: 0,
         chunkSize: 0,
+        privacy:'anybody',
         retryHandler: new RetryHandler(),
         onComplete: function() {},
         onProgress: function() {},
@@ -161,7 +163,7 @@
         this.videoData = {
             name: (opts.name > '') ? opts.name : defaults.name,
             description: (opts.description > '') ? opts.description : defaults.description,
-            'privacy.view': opts.private ? 'nobody' : 'anybody'
+            'privacy.view': opts.privacy
         }
 
         if (!(this.url = opts.url)) {
